@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kids Chess Lessons</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pieces-cburnett.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 id="chTitle"></h1>
+    <p id="chSub"></p>
+  </header>
+  <div class="layout">
+    <section>
+      <div class="player" id="topPlayer"></div>
+      <div class="boardwrap">
+      <div class="board" id="board">
+        <div class="squares" id="squares"></div>
+        <svg class="trail" id="trail" viewBox="0 0 8 8" preserveAspectRatio="none"></svg>
+        <div class="pieces" id="pieces"></div>
+        <div class="start" id="startOverlay"><button id="bStart">▶ Start lesson</button></div>
+      </div>
+      <div class="buddy" id="buddy" aria-hidden="true"><div class="body"><svg viewBox="0 0 100 100" width="100%" height="100%">
+  <ellipse cx="50" cy="94" rx="24" ry="4" fill="rgba(0,0,0,.18)"/>
+  <path class="wing" d="M20 50 Q8 66 22 80 Q28 66 30 54Z" fill="#8A5A3B"/>
+  <path class="wing" d="M80 50 Q92 66 78 80 Q72 66 70 54Z" fill="#8A5A3B"/>
+  <ellipse cx="50" cy="60" rx="30" ry="32" fill="#B9794F"/>
+  <ellipse cx="50" cy="70" rx="18" ry="20" fill="#F6D9A8"/>
+  <path d="M42 64 q4 3 8 0 q4 3 8 0 M40 72 q5 3 10 0 q5 3 10 0 M43 80 q4 3 7 0 q4 3 7 0" stroke="#D9AE77" stroke-width="2" fill="none"/>
+  <circle cx="38" cy="44" r="12" fill="#fff" stroke="#6B4429" stroke-width="2"/>
+  <circle cx="62" cy="44" r="12" fill="#fff" stroke="#6B4429" stroke-width="2"/>
+  <circle cx="40" cy="45" r="5.5" fill="#22264B"/><circle cx="64" cy="45" r="5.5" fill="#22264B"/>
+  <circle cx="42" cy="43" r="1.8" fill="#fff"/><circle cx="66" cy="43" r="1.8" fill="#fff"/>
+  <rect class="lid" x="26" y="32" width="24" height="24" rx="12" fill="#B9794F"/>
+  <rect class="lid" x="50" y="32" width="24" height="24" rx="12" fill="#B9794F"/>
+  <path d="M46 52 L54 52 L50 60Z" fill="#F2A33A"/>
+  <path d="M40 92 l-4 4 M44 92 l0 5 M60 92 l4 4 M56 92 l0 5" stroke="#F2A33A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M28 26 L50 16 L72 26 L50 34Z" fill="#22264B"/><rect x="40" y="27" width="20" height="8" fill="#22264B"/>
+  <path d="M72 26 L74 40" stroke="#FFC93C" stroke-width="2"/><circle cx="74" cy="41" r="3" fill="#FFC93C"/>
+</svg></div></div>
+      </div>
+      <div class="player" id="botPlayer"></div>
+      <div id="lessonCtl">
+        <div class="progress"><span id="moveCount">0 / 0</span><input type="range" id="slider" min="0" value="0" aria-label="Move position"></div>
+        <div class="controls">
+          <button class="ctl" id="bRestart" aria-label="Replay from the start"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+          <button class="ctl" id="bBack" aria-label="Previous move"><svg viewBox="0 0 24 24"><path d="M17 5v14L6 12z"/></svg></button>
+          <button class="ctl main" id="bPlay" aria-label="Play"><svg viewBox="0 0 24 24" id="playIcon"><path d="M7 4v16l13-8z"/></svg></button>
+          <button class="ctl" id="bFwd" aria-label="Next move"><svg viewBox="0 0 24 24"><path d="M7 5v14l11-7z"/></svg></button>
+          <button class="ctl" id="bRepeat" aria-label="Replay this move"><svg viewBox="0 0 24 24"><path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/></svg></button>
+        </div>
+        <div class="settings">
+          <label><input type="checkbox" id="voiceOn" checked> 🔊 Voice</label>
+          <label>Speed <select id="paceSel"><option value="0.8">Slow</option><option value="1" selected>Normal</option><option value="1.25">Fast</option></select></label>
+          <label>Voice <select id="voiceSel"></select></label>
+          <button class="small" id="bTest">Test voice</button>
+        </div>
+        <p class="note" id="voiceNote"></p>
+      </div>
+    </section>
+    <section>
+      <div class="panel" id="panel"></div>
+      <div class="evalbar" id="evalBar"><button class="btn primary" id="bEval">⭐ Start evaluation</button></div>
+      <p class="credit">Board and pieces in the classic cburnett style by Colin M.L. Burnett (GPL).</p>
+    </section>
+  </div>
+</div>
+
+<script src="js/vendor/chess.js"></script>
+<script src="chapters/chapter-01.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
